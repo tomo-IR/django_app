@@ -4,5 +4,6 @@ from django.shortcuts import render
 from django.shortcuts import render
 from django.http import HttpResponse
 
-def index(request):
-    return HttpResponse("Hello Django!!")
+def index(request, nickname, age):
+    result = 'your account: ' + nickname + '" (' + str(age) + ').'
+    return HttpResponse(result)
