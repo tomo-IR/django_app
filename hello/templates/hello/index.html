@@ -12,11 +12,9 @@
   </head>
   <body>
     <h1>{{title}}</h1>
-    <p>{{msg}}</p>
-    <form action="{% url 'form' %}" method="post">
-      {% csrf_token %}
-      <label for="msg">message: </label>
-      <input id="msg" type="text" name="msg" />
+    <p>{{message|safe}}</p>
+    <form action="{% url 'index' %}" method="post">
+      {% csrf_token %} {{ form }}
       <input type="submit" value="click" />
     </form>
   </body>
